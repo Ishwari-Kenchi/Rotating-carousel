@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Rotating Carousel</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(135deg,#1e3c72,#2a5298);
+perspective:1000px;
+color:white;
+}
+
+/* heading style */
+
+h1{
+margin-bottom:60px;
+font-size:40px;
+letter-spacing:2px;
+text-transform:uppercase;
+text-shadow:0 10px 20px rgba(0,0,0,0.6);
+}
+
+/* rotating box */
+
+.box{
+position:relative;
+width:220px;
+height:150px;
+transform-style:preserve-3d;
+animation:rotate 20s linear infinite;
+}
+
+.box span{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+transform-origin:center;
+transform:rotateY(calc(var(--i) * 45deg)) translateZ(350px);
+}
+
+.box span img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
+
+@keyframes rotate{
+
+0%{
+transform:rotateY(0deg);
+}
+
+100%{
+transform:rotateY(360deg);
+}
+
+}
+.a{
+    font-style: italic;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 class="a">Rotating Carousel</h1>
+
+<div class="box">
+
+<span style="--i:1">
+<img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e">
+</span>
+
+<span style="--i:2">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+</span>
+
+<span style="--i:3">
+<img src="https://images.unsplash.com/photo-1448375240586-882707db888b">
+</span>
+
+<span style="--i:4">
+<img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e">
+</span>
+
+<span style="--i:5">
+<img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564">
+</span>
+
+<span style="--i:6">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+</span>
+
+<span style="--i:7">
+<img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9">
+</span>
+
+<span style="--i:8">
+<img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429">
+</span>
+
+</div>
+
+</body>
+</html>
